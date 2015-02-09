@@ -1,0 +1,86 @@
+@import "../../../vendor/bower_components/jeet/scss/jeet/index";
+
+//@include edit();
+
+// Config
+$black: #293339;
+$grey: #cccccc;
+$green: #63b148;
+$white: #ffffff;
+
+// Base
+.container {
+	@include center(960px);
+}
+
+.section {
+	padding: 100px 20px;
+}
+
+.section-sm {
+	padding: 20px;
+}
+
+// Type
+.text-right {
+	text-align: right;
+}
+
+.link {
+	color: inherit;
+}
+
+// Grid
+.col-1-3rd {
+	@include column(1/3);
+}
+
+.col-1-half {
+	@include column(1/2);
+}
+
+.light-bg {
+	color: $black;
+}
+
+.dark-bg {
+	color: $white;
+}
+
+// Components / Modules
+
+.list-group {
+	list-style: none;
+	padding: 0;
+}
+
+.list-group-item {
+	padding: 10px;
+	background-color: transparentize($black, 0.8);
+	margin-bottom: 5px;
+}
+
+// Pages
+.hero {
+	background-color: $black;
+	text-align: center;
+}
+
+.hero-logo {
+	width: 500px;
+	height: auto;
+}
+
+.footer {
+	color: $grey;
+	font-size: 15px;
+
+	.link {
+		color: darken($grey, 10%);
+		text-decoration: none;
+	}
+}
+
+.soft-green-bg {
+	background-color: $green;
+}
