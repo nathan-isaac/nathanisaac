@@ -1,14 +1,36 @@
+@import "../../../vendor/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/vendor-prefixes";
 @import "../../../vendor/bower_components/jeet/scss/jeet/index";
+@import "../../../vendor/bower_components/sass-mediaqueries/media-queries";
 
 //@include edit();
 
 // Config
-$black: #293339;
+
+// Colors: http://www.colourlovers.com/palette/1597233/500_honies
+$black: #363636;
 $grey: #cccccc;
-$green: #63b148;
-$white: #ffffff;
+$green: #89C7A0;
+$white: #F9F9F9;
+$blue: #308ADA;
+$lightBlue: #E3F1F0;
+$yellow: #E8E98C;
+$orange: #D88D6F;
+
+$radius: 4px;
 
 // Base
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+.row {
+	@include cf();
+}
+
 .container {
 	@include center(960px);
 }
@@ -26,17 +48,68 @@ $white: #ffffff;
 	text-align: right;
 }
 
+.text-center {
+	text-align: center;
+}
+
 .link {
 	color: inherit;
+}
+
+.paragraph {
+	font-size: 18px;
+	line-height: 1.5;
 }
 
 // Grid
 .col-1-3rd {
 	@include column(1/3);
+
+	@include max-screen(768px)  {
+		@include column(1/1);
+	}
+}
+
+.col-2-3rds {
+	@include column(2/3);
+
+	@include max-screen(768px)  {
+		@include column(1/1);
+	}
 }
 
 .col-1-half {
 	@include column(1/2);
+
+	@include max-screen(768px)  {
+		@include column(1/1);
+	}
+}
+
+// Backgrounds
+
+.black-bg {
+	background-color: $black;
+}
+
+.green-bg {
+	background-color: $green;
+}
+
+.yellow-bg {
+	background-color: $yellow;
+}
+
+.orange-bg {
+	background-color: $orange;
+}
+
+.light-blue-bg {
+	background-color: $lightBlue;
+}
+
+.white-bg {
+	background-color: $white;
 }
 
 .light-bg {
@@ -45,6 +118,109 @@ $white: #ffffff;
 
 .dark-bg {
 	color: $white;
+}
+
+// Image
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+}
+
+.img-profile {
+	border-radius: 50%;
+	background: #fff;
+	padding: 5px;
+	max-width: 200px;
+}
+
+
+// Forms
+.form-group {
+	margin-bottom: 15px;
+}
+
+.form-label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	padding: 13px 15px;
+	border: 1px solid $grey;
+	border-radius: $radius;
+	background-color: $white;
+
+	@include placeholder($grey);
+
+	&:active,
+	&:focus,
+	&:hover {
+		box-shadow: none;
+		outline: none;
+		border-color: $blue;
+	}
+}
+
+// Buttons
+
+.btn {
+	display: inline-block;
+	background-color: $white;
+	padding: 13px 20px;
+	color: $black;
+	font-weight: bold;
+	border: 1px solid darken($grey, 10%);
+	border-radius: $radius;
+
+	&:active,
+	&:focus,
+	&:hover {
+		box-shadow: none;
+		outline: none;
+		border-color: darken($grey, 30%);
+	}
+}
+
+.btn-block {
+	display: block;
+	width: 100%;
+}
+
+.btn-default {
+	@extend .btn;
+}
+
+.btn-primary {
+	@extend .btn;
+
+	border-width: 0px;
+	border-color: $green;
+	border-bottom-color: rgba(0,0,0,0.0);
+	border-bottom-width: 2px;
+
+	background-color: $green;
+	color: $white;
+
+	&:active,
+	&:focus {
+		border-color: $green;
+		color: white;
+		border-bottom-color: transparent !important;
+		box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
+	}
+
+	&:hover {
+		border-color: $green;
+		border-bottom-color: rgba(0,0,0,0.25);
+		border-bottom-width: 2px;
+		color: white;
+		outline: 0;
+		text-decoration: none;
+	}
 }
 
 // Components / Modules
@@ -60,10 +236,38 @@ $white: #ffffff;
 	margin-bottom: 5px;
 }
 
+.list-group-item-progressive {
+	@extend .list-group-item;
+
+	position: relative;
+	padding: 0 10px;
+	height: 40px;
+	line-height: 40px;
+	vertical-align: middle;
+}
+
+.progress {
+	background-color: transparentize($black, 0.9);
+	width: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 40px;
+}
+
+@for $i from 0 through 100 {
+	.progress-#{$i}-percent {
+		@extend .progress;
+
+		width: percentage($i/100);
+	}
+}
+
 // Pages
 .hero {
-	background-color: $black;
 	text-align: center;
+	padding: 200px 20px;
 }
 
 .hero-logo {
@@ -72,6 +276,7 @@ $white: #ffffff;
 }
 
 .footer {
+//	background-color: $grey;
 	color: $grey;
 	font-size: 15px;
 
@@ -79,8 +284,4 @@ $white: #ffffff;
 		color: darken($grey, 10%);
 		text-decoration: none;
 	}
-}
-
-.soft-green-bg {
-	background-color: $green;
 }

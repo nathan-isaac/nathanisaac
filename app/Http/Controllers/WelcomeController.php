@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests\SendContactEmailRequest;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -31,6 +33,11 @@ class WelcomeController extends Controller {
 	public function index()
 	{
 		return view('welcome');
+	}
+
+	public function contact(SendContactEmailRequest $request)
+	{
+		dd($request);
 	}
 
 }

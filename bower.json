@@ -3,6 +3,8 @@
   "dependencies": {
     "normalize.css": "~3.0.2",
     "animate.css": "~3.2.0",
-    "jeet": "~6.1.2"
+    "jeet": "~6.1.2",
+    "bootstrap-sass": "~3.3.3",
+    "sass-mediaqueries": "~1.4.0"
   }
 }
