@@ -53,7 +53,7 @@
                 <div class="col-1-half">
                     <h2>Front-end Web Designer</h2>
 
-                    <p class="paragraph">As a font-end designer I design user friendly web applications using the latest web technologies, frameworks and languages which include HTML5, CSS3, Sass, JS, jQuery, and Angularjs.</p>
+                    <p class="paragraph">As a front-end designer I design user friendly web applications using the latest web technologies, frameworks and languages which include HTML5, CSS3, Sass, JS, jQuery, and Angularjs.</p>
                 </div>
                 <div class="col-1-half">
                     <h2>Back-end Web Developer</h2>
