@@ -290,5 +290,9 @@
             }
         }
     </script>
+
+    @if( ! Config::get('app.debug'))
+        @include('partials.google')
+    @endif
 </body>
 </html>
