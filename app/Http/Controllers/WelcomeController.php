@@ -41,7 +41,7 @@ class WelcomeController extends Controller {
 
 	public function contact(SendContactEmailRequest $request)
 	{
-        Mail::send('emails.contact', [
+        Mail::send(['text' => 'emails.contact'], [
             'name' => $request->get('name'),
             'company' => $request->get('company'),
             'phone' => $request->get('phone'),
@@ -52,8 +52,10 @@ class WelcomeController extends Controller {
             $message->to('nathan@nathan-isaac.com', 'Nathan Isaac')->subject('Portfolio Contact Request');
         });
 
-        Session::flash('flash.heading', 'You message has been sent');
+        Session::flash('flash.heading', 'Your message has been sent');
         Session::flash('flash.message', 'I will get back to you soon.');
+
+        Log::info('Sent contact email.', $request->all());
 
         return redirect()->back();
 	}
