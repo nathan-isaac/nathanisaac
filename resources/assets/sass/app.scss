@@ -15,6 +15,7 @@ $blue: #308ADA;
 $lightBlue: #E3F1F0;
 $yellow: #E8E98C;
 $orange: #D88D6F;
+$red: #F46F6C;
 
 $radius: 4px;
 
@@ -22,9 +23,26 @@ $radius: 4px;
 /* apply a natural box layout model to all elements, but allowing components to change */
 html {
 	box-sizing: border-box;
+	font-family: 'Open Sans', sans-serif; // Maybe try Source Code Pro
+	font-weight: 300;
 }
 *, *:before, *:after {
 	box-sizing: inherit;
+}
+
+::selection {
+	background: $green;
+}
+
+::-moz-selection {
+	background: $green;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Oswald', sans-serif;
 }
 
 .row {
@@ -41,6 +59,10 @@ html {
 
 .section-sm {
 	padding: 20px;
+}
+
+.section-heading {
+	text-transform: uppercase;
 }
 
 // Type
@@ -83,6 +105,19 @@ html {
 
 	@include max-screen(768px)  {
 		@include column(1/1);
+	}
+}
+
+// Hide
+.mobile-hide {
+	@include max-screen(768px)  {
+		display: none;
+	}
+}
+
+.mobile-show {
+	@include min-screen(768px)  {
+		display: none;
 	}
 }
 
@@ -165,6 +200,37 @@ html {
 	}
 }
 
+.help-block {
+	font-size: 12px;
+	padding: 5px 10px;
+}
+
+.form-control-error {
+
+	.form-control {
+		border-color: $red;
+
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+
+		&:active,
+		&:focus,
+		&:hover {
+			border-color: $red;
+		}
+	}
+
+	.help-block {
+		display: block;
+		background-color: $red;
+
+		color: $white;
+
+		border-bottom-right-radius: $radius;
+		border-bottom-left-radius: $radius;
+	}
+}
+
 // Buttons
 
 .btn {
@@ -244,6 +310,7 @@ html {
 	height: 40px;
 	line-height: 40px;
 	vertical-align: middle;
+//	font-size: 14px;
 }
 
 .progress {
@@ -262,6 +329,55 @@ html {
 
 		width: percentage($i/100);
 	}
+}
+
+// Nav
+.nav {
+	z-index: 1000;
+	position: fixed;
+	width: 100%;
+	height: auto;
+	background-color: transparentize($black, 0.1);
+}
+
+@include max-screen(768px)  {
+	.nav-mobile {
+		height: 100%;
+
+		.nav-items {
+			display: block;
+			padding: 40px 0;
+			text-align: center;
+
+			.nav-item {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.nav-item {
+	color: $white;
+	text-decoration: none;
+	padding: 20px 30px;
+	font-weight: bold;
+	font-size: 14px;
+
+	&:hover {
+		background-color: transparentize(darken($black, 5%), 0.5);
+	}
+
+	&:active,
+	&:focus {
+		background-color: transparentize(darken($black, 5%), 0.3);
+	}
+}
+
+.nav-item-icon {
+	@extend .nav-item;
+
+	font-size: 25px;
 }
 
 // Pages
@@ -284,4 +400,37 @@ html {
 		color: darken($grey, 10%);
 		text-decoration: none;
 	}
+}
+
+// Flash
+.flash {
+	z-index: 2000;
+	position: fixed;
+	top: 100px;
+	right: 20px;
+	padding: 20px 30px;
+	background-color: transparentize($green, 0.1);
+	color: $white;
+
+	@include max-screen(768px) {
+		left: 20px;
+	}
+}
+
+.flash-heading {
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.flash-message {
+	margin: 0;
+}
+
+.flash-close {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	padding: 5px;
+	cursor: pointer;
 }

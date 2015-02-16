@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nathan Isaac Portfolio</title>
 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:700|Open+Sans:300,700' rel='stylesheet' type='text/css'>
+    <!--<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,400,500,600,700,900|Oswald:400,700,300' rel='stylesheet' type='text/css'>-->
+
     <!-- Styles -->
     <link href="css/all.css" rel="stylesheet">
 
@@ -17,13 +21,49 @@
     <![endif]-->
 </head>
 <body>
-    <section class="hero section black-bg dark-bg">
+    <nav class="section-sm black-bg dark-bg nav text-right">
+        <div class="container">
+            <div class="mobile-show">
+                <a id="nav-toggle" class="nav-item-icon" href="#"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <div class="mobile-hide nav-items">
+                <a class="nav-item" href="#services">Services</a>
+                <a class="nav-item" href="#skills">Skills</a>
+                <a class="nav-item" href="#about">About</a>
+                <a class="nav-item" href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="top" class="hero section black-bg dark-bg">
         <div class="container">
             <img src="/images/logo-lg.svg" class="hero-logo img-responsive animated bounceInDown" alt="Nathan Isaac Web Design and Development"/>
         </div>
     </section>
 
-    <section class="section green-bg dark-bg">
+    <section id="services" class="section green-bg dark-bg">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="section-heading">This is what I do</h1>
+            </div>
+
+            <div class="section-content">
+                <div class="col-1-half">
+                    <h2>Front-end Web Designer</h2>
+
+                    <p class="paragraph">As a font-end designer I design user friendly web applications using the latest web technologies, frameworks and languages which include HTML5, CSS3, Sass, JS, jQuery, and Angularjs.</p>
+                </div>
+                <div class="col-1-half">
+                    <h2>Back-end Web Developer</h2>
+
+                    <p class="paragraph">As a back-end developer I develop clean and maintainable domain logic using popular technologies, frameworks and languages with a few examples being PHP, Laravel, SQL, and Git.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section yellow-bg light-bg">
         <div class="container">
             <div class="section-header">
                 <h1 class="section-heading">I specialize in...</h1>
@@ -100,7 +140,7 @@
         </div>
     </section>-->
 
-    <section class="about section yellow-bg light-bg">
+    <section id="about" class="section orange-bg dark-bg">
         <div class="container">
             <div class="col-1-3rd">
                 <div class="text-center">
@@ -115,61 +155,67 @@
 
                 <div class="section-content">
                     <p class="paragraph">
-                        Hi, I'm Nathan. I am a web designer and developer who enjoys web technology and the web technology community. I am currently finishing up my Web Design Degree at Walla Walla University while employed full time at Walla Walla University as a Web Application Developer.
+                        Hi, I'm Nathan. I am a web designer and developer who enjoys web technology and the web technology community. I am currently completing my Web Design Degree at Walla Walla University while being employed full time at Walla Walla University as a Web Application Developer.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact section white-bg light-bg">
+    <section id="contact" class="section white-bg light-bg">
         <div class="container">
             <div class="section-header">
                 <h1 class="section-heading">Get in touch</h1>
             </div>
 
             <div class="section-content">
-                {!! Form::open(['route' => 'contact']) !!}
+                {!! Form::open(['url' => '/#contact']) !!}
                     <div class="row">
                         <div class="col-1-half">
-                            <div class="form-group">
+                            <div class="form-group {!! ! $errors->has('name') ? '' : 'form-control-error' !!}">
                                 {!! Form::label('name', 'Name', ['class' => 'form-label']) !!}
                                 {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'How should I address you?'] ) !!}
+                                {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
 
                         <div class="col-1-half">
-                            <div class="form-group">
+                            <div class="form-group {!! ! $errors->has('company') ? '' : 'form-control-error' !!}">
                                 {!! Form::label('company', 'Company', ['class' => 'form-label']) !!}
                                 {!! Form::text('company', null, ['class' => 'form-control', 'placeholder' => 'Who do you work for?'] ) !!}
+                                {!! $errors->first('company', '<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-1-half">
-                            <div class="form-group">
+                            <div class="form-group {!! ! $errors->has('phone') ? '' : 'form-control-error' !!}">
                                 {!! Form::label('phone', 'Phone', ['class' => 'form-label']) !!}
                                 {!! Form::input('phone', 'phone', null, ['class' => 'form-control', 'placeholder' => 'How should I contact you?'] ) !!}
+                                {!! $errors->first('phone', '<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
 
                         <div class="col-1-half">
-                            <div class="form-group">
+                            <div class="form-group {!! ! $errors->has('email') ? '' : 'form-control-error' !!}">
                                 {!! Form::label('email', 'Email', ['class' => 'form-label']) !!}
                                 {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'How should I contact you?'] ) !!}
+                                {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
                             </div>
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group {!! ! $errors->has('subject') ? '' : 'form-control-error' !!}">
                         {!! Form::label('subject', 'Subject', ['class' => 'form-label']) !!}
                         {!! Form::text('subject', null, ['class' => 'form-control', 'placeholder' => 'What\'s this message about?']) !!}
+                        {!! $errors->first('subject', '<span class="help-block">:message</span>') !!}
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group {!! ! $errors->has('message') ? '' : 'form-control-error' !!}">
                         {!! Form::label('message', 'Message', ['class' => 'form-label']) !!}
                         {!! Form::textarea('message', null, ['class' => 'form-control', 'placeholder' => 'What\'s on your mind?']) !!}
+                        {!! $errors->first('message', '<span class="help-block">:message</span>') !!}
                     </div>
 
                     <div class="form-group">
@@ -192,9 +238,48 @@
         </div>
     </section>
 
+    @if(session('flash.heading'))
+        <div class="flash">
+            <i class="fa fa-times-circle flash-close"></i>
+            <h1 class="flash-heading">{{ session('flash.heading') }}</h1>
+
+            @if(session('flash.message'))
+                <p class="flash-message">{{ session('flash.message') }}</p>
+            @endif
+        </div>
+    @endif
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <!-- <script src="js/bootstrap.min.js"></script> -->
+
+    <script>
+        $('#nav-toggle').on('click', function(e) {
+            e.preventDefault();
+
+            var icon = $(this).find('.fa');
+
+            if(icon.hasClass('fa-bars')) {
+                icon.addClass('fa-times');
+                icon.closest('.nav').addClass('nav-mobile');
+                icon.removeClass('fa-bars');
+            } else {
+                icon.addClass('fa-bars');
+                icon.closest('.nav').removeClass('nav-mobile');
+                icon.removeClass('fa-times');
+            }
+        });
+
+        $('.flash-close').on('click', function() {
+            $(this).closest('.flash').addClass('animated bounceOutRight');
+        });
+
+        if($('.flash')) {
+            setTimeout(function() {
+                $('.flash').addClass('animated bounceOutRight');
+            }, 5000);
+        }
+    </script>
 </body>
 </html>

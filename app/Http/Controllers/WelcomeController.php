@@ -1,6 +1,10 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests\SendContactEmailRequest;
+use Mail;
+use Log;
+use View;
+use Session;
 
 class WelcomeController extends Controller {
 
@@ -37,7 +41,21 @@ class WelcomeController extends Controller {
 
 	public function contact(SendContactEmailRequest $request)
 	{
-		dd($request);
+        Mail::send('emails.contact', [
+            'name' => $request->get('name'),
+            'company' => $request->get('company'),
+            'phone' => $request->get('phone'),
+            'email' => $request->get('email'),
+            'subject' => $request->get('subject'),
+            'email_message' => $request->get('message')
+        ], function($message) {
+            $message->to('nathan@nathan-isaac.com', 'Nathan Isaac')->subject('Portfolio Contact Request');
+        });
+
+        Session::flash('flash.heading', 'You message has been sent');
+        Session::flash('flash.message', 'I will get back to you soon.');
+
+        return redirect()->back();
 	}
 
 }
