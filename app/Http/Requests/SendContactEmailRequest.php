@@ -22,12 +22,12 @@ class SendContactEmailRequest extends Request {
 	public function rules()
 	{
 		return [
-			'name' => 'required',
-			'company' => '',
-			'phone' => 'required_without:email',
-			'email' => 'required_without:phone|email',
-			'subject' => 'required',
-			'message' => 'required'
+			'name' => 'required|max:200',
+			'company' => 'max:200',
+			'phone' => 'required_without:email|numeric|digits_between:8,25',
+			'email' => 'required_without:phone|email|max:200',
+			'subject' => 'required|max:200',
+			'message' => 'required|max:1000'
 		];
 	}
 
