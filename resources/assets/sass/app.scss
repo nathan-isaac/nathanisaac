@@ -315,7 +315,7 @@ h4 {
 
 .progress {
 	background-color: transparentize($black, 0.9);
-	width: 100%;
+	width: 0%;
 	display: block;
 	position: absolute;
 	top: 0;
@@ -324,10 +324,17 @@ h4 {
 }
 
 @for $i from 0 through 100 {
-	.progress-#{$i}-percent {
-		@extend .progress;
+	.progress-#{$i}-percent.animate {
+		animation: w#{$i} 1s ease forwards;
+	}
 
-		width: percentage($i/100);
+	@keyframes w#{$i} {
+		from {
+			width: 0%;
+		}
+		to {
+			width: percentage($i/100);
+		}
 	}
 }
 

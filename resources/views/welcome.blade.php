@@ -75,35 +75,35 @@
                 <div class="col-1-3rd">
                     <h3>Languages</h3>
                     <ul class="list-group">
-                        <li class="list-group-item-progressive"><div class="progress-100-percent"></div>HTML &amp; HTML5</li>
-                        <li class="list-group-item-progressive"><div class="progress-95-percent"></div>CSS &amp; CSS3</li>
-                        <li class="list-group-item-progressive"><div class="progress-95-percent"></div>Sass</li>
-                        <li class="list-group-item-progressive"><div class="progress-85-percent"></div>JS</li>
-                        <li class="list-group-item-progressive"><div class="progress-80-percent"></div>PHP</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-100-percent"></div>HTML &amp; HTML5</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-95-percent"></div>CSS &amp; CSS3</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-95-percent"></div>Sass</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-85-percent"></div>JS</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-80-percent"></div>PHP</li>
                     </ul>
                 </div>
 
                 <div class="col-1-3rd">
                     <h3>Frameworks</h3>
                     <ul class="list-group">
-                        <li class="list-group-item-progressive"><div class="progress-90-percent"></div>Laravel</li>
-                        <li class="list-group-item-progressive"><div class="progress-80-percent"></div>jQuery</li>
-                        <li class="list-group-item-progressive"><div class="progress-75-percent"></div>Angularjs</li>
-                        <li class="list-group-item-progressive"><div class="progress-50-percent"></div>WordPress</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-90-percent"></div>Laravel</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-80-percent"></div>jQuery</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-75-percent"></div>Angularjs</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-50-percent"></div>WordPress</li>
                     </ul>
                 </div>
 
                 <div class="col-1-3rd">
                     <h3>Operating Systems</h3>
                     <ul class="list-group">
-                        <li class="list-group-item-progressive"><div class="progress-95-percent"></div>Windows</li>
-                        <li class="list-group-item-progressive"><div class="progress-70-percent"></div>Mac</li>
-                        <li class="list-group-item-progressive"><div class="progress-50-percent"></div>Linux</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-95-percent"></div>Windows</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-70-percent"></div>Mac</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-50-percent"></div>Linux</li>
                     </ul>
 
                     <h3>Other</h3>
                     <ul class="list-group">
-                        <li class="list-group-item-progressive"><div class="progress-80-percent"></div>Git (Version Control)</li>
+                        <li class="list-group-item-progressive"><div class="progress progress-80-percent"></div>Git (Version Control)</li>
                     </ul>
                 </div>
             </div>
@@ -253,44 +253,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-
-    <script>
-        $('#nav-toggle').on('click', function(e) {
-            e.preventDefault();
-
-            toggleMobileNav();
-        });
-
-        $('.nav-item').on('click', function(e) {
-            $(this).closest('.nav').removeClass('nav-mobile');
-            toggleMobileNav();
-        });
-
-        $('.flash-close').on('click', function() {
-            $(this).closest('.flash').addClass('animated bounceOutRight');
-        });
-
-        if($('.flash')) {
-            setTimeout(function() {
-                $('.flash').addClass('animated bounceOutRight');
-            }, 5000);
-        }
-
-        function toggleMobileNav() {
-            var icon = $('#nav-toggle .fa');
-
-            if(icon.hasClass('fa-bars')) {
-                icon.addClass('fa-times');
-                icon.closest('.nav').addClass('nav-mobile');
-                icon.removeClass('fa-bars');
-            } else {
-                icon.addClass('fa-bars');
-                icon.closest('.nav').removeClass('nav-mobile');
-                icon.removeClass('fa-times');
-            }
-        }
-    </script>
+    <script src="/js/all.js"></script>
 
     @if( ! Config::get('app.debug'))
         @include('partials.google')

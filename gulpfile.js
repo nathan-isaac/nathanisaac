@@ -21,10 +21,17 @@ elixir(function (mix) {
             'vendor/bower_components/normalize.css/normalize.css',
             'public/css/vendor/normalize.css'
         )
+        .copy(
+            'resources/assets/js',
+            'public/js/assets'
+        )
         .sass('app.scss')
         .styles([
             'vendor/animate.css',
             'vendor/normalize.css',
             'app.css'
-        ], 'public/css/all.css', 'public/css');
+        ], 'public/css/all.css', 'public/css')
+        .scripts([
+            'assets/app.js',
+        ], 'public/js/all.js', 'public/js');
 });
