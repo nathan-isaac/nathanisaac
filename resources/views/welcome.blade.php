@@ -300,7 +300,7 @@
                                 <a href="https://wordpress.com" target="_blank">WordPress</a> and a custom
                                 WordPress theme.</p>
 
-                            <p><a target="_blank" href="https://www.ezpedo.com/" class="btn btn-primary">View project</a></p>
+                            <p><a target="_blank" href="http://martinairfield.com/" class="btn btn-primary">View project</a></p>
                         </div>
                     </div>
                 </div>
