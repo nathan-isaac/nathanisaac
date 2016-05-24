@@ -211,16 +211,13 @@
                         </div>
                         <div class="Panel__body">
 
-                            <h4 class="clearfix">Pantry App <span class="label label-success pull-right">In Development</span></h4>
+                            <h4 class="clearfix">Pantry App <span class="label label-info pull-right">In Development</span></h4>
 
                             <p><img src="/images/portfolio/pantryapp.jpg" alt="Pantry App" class="img-responsive"></p>
 
                             <p>Figuring what to eat from what is in the kitchen has always been a
                                 challenge for me. This is why I am working on Pantry. I am building this app
-                                with <a target="_blank" href="http://vuejs.org">Vue.js</a> and
-                                <a target="_blank" href="https://laravel.com">Laravel</a>.</p>
-
-                            <p><a target="_blank" href="http://pantryapp.io/" class="btn btn-primary">View project</a></p>
+                                with Vue.js and Laravel.</p>
 
                             <hr>
 
@@ -229,8 +226,7 @@
                             <p><img src="/images/portfolio/quizapp.jpg" alt="Quiz App" class="img-responsive"></p>
 
                             <p>My typography class required that I learn different typefaces by name. I created
-                                this simple quiz app to help me study. This is built with
-                                <a target="_blank" href="https://angularjs.org">Angular.js</a>.</p>
+                                this simple quiz app to help me study. This is built with Angular.js.</p>
 
                             <p><a target="_blank" href="http://typereview.njisaac.com/" class="btn btn-primary">View project</a>
                                 <a target="_blank" href="https://github.com/nisaac2fly/typereview" class="btn btn-default">View source</a></p>
@@ -242,9 +238,8 @@
                             <p><img src="/images/portfolio/aoeapp.jpg" alt="AOE App" class="img-responsive"></p>
 
                             <p>This app generates random teams with civilization for the Age of Empires II computer
-                                game. This fun project was created in order to learn my first
-                                <a target="_blank" href="https://angularjs.org/">JS framework</a> and keep up with
-                                <a target="_blank" href="https://laravel.com">Laravel</a>.</p>
+                                game. This fun project was created in order to learn my first JS framework and
+                                keep up with Laravel.</p>
 
                             <p><a target="_blank" href="http://aoe.njisaac.com/" class="btn btn-primary">View project</a>
                                 <a target="_blank" href="https://github.com/nisaac2fly/aoe" class="btn btn-default">View source</a></p>
@@ -260,8 +255,7 @@
                             <h4>API</h4>
 
                             <p>WWU needed an app to provide integrations between internal projects and services.
-                                I found this a perfect opportunity to use the dedicated API project called
-                                <a target="_blank" href="https://lumen.laravel.com/">Lumen</a>.</p>
+                                I found this a perfect opportunity to use the dedicated API project called Lumen.</p>
 
                             <hr>
 
@@ -270,9 +264,8 @@
                             <p><img src="/images/portfolio/swipes.png" alt="Swipe App" class="img-responsive"></p>
 
                             <p>The WWU CommUnity department needed an app to collect event attendance. This app
-                                needed to be internet independent. We decided to build a chrome app with
-                                <a target="_blank" href="https://angularjs.org/">Angular JS</a>. This way the
-                                the app can be installed locally and run without internet.</p>
+                                needed to be internet independent. We decided to build a chrome app with Angular JS.
+                                This way the app can be installed locally and run without internet.</p>
                         </div>
                     </div>
 
@@ -298,8 +291,7 @@
                             <p><img src="/images/portfolio/martin-airfield.jpg" alt="martin field" class="img-responsive"></p>
 
                             <p>The Martin Airfield website was designed for the privately owned airport in
-                                College Place WA. The website was built with
-                                <a href="https://wordpress.com" target="_blank">WordPress</a> and a custom
+                                College Place WA. The website was built withWordPress and a custom
                                 WordPress theme.</p>
 
                             <p><a target="_blank" href="http://martinairfield.com/" class="btn btn-primary">View project</a></p>
