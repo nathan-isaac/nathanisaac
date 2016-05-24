@@ -106,7 +106,7 @@
                                 <div class="Portfolio-list__section">
                                     <h4>Challenges</h4>
                                     <p>Create a website that can be flexible for students, faculty, staff, and
-                                        alumni users. Implement SSO to make signing in to University application
+                                        alumni users. Implement SSO to make signing in to University applications
                                         simpler for the end user.</p>
 
                                     <h4>Solution</h4>
