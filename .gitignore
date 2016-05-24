@@ -1,5 +1,7 @@
 /vendor
 /node_modules
-.env
+/public/storage
 /.idea
-tests/_output/*
+Homestead.yaml
+Homestead.json
+.env
