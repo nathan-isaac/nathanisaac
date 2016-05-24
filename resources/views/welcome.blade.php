@@ -85,7 +85,9 @@
                             <img src="/images/portfolio/mywwu-v2.jpg" alt="myWWU" class="img-responsive">
                         </div>
                         <div class="Portfolio-list__body">
-                            <span class="label label-success Portfolio-list__label">In Beta</span>
+                            <p>
+                                <span class="label label-success Portfolio-list__label">In Beta</span>
+                            </p>
 
                             <h1 class="Portfolio-list__heading">myWWU V2</h1>
 
