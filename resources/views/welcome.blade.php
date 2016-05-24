@@ -50,9 +50,8 @@
                         <h2 class="Panel__title">I do...</h2>
                     </div>
                     <div class="Panel__body">
-                        ...web UX design and build custom websites and web applications.
-                        <a target="_blank" href="https://laravel.com/">Laravel</a>, <a target="_blank" href="http://getbootstrap.com/">Bootstrap</a>,
-                        and <a target="_blank" href="http://vuejs.org/">Vue.js</a> are a few of my favorite development tools.
+                        ...web UX design and build custom websites and web applications. Laravel, Bootstrap, and Vue.js
+                        are a few of my favorite development tools.
                     </div>
                 </div>
 
