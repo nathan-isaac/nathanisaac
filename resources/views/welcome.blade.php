@@ -237,9 +237,9 @@
 
                             <p><img src="/images/portfolio/aoeapp.jpg" alt="AOE App" class="img-responsive"></p>
 
-                            <p>This app generates random teams with civilization for the Age of Empires II computer
-                                game. This fun project was created in order to learn my first JS framework and
-                                keep up with Laravel.</p>
+                            <p>Age of Empires II is a fun computer game to play with friends. However, it lacks
+                                flexibility on the setup screen. I decided to create an app to allow for more
+                                customizations when setting up teams.</p>
 
                             <p><a target="_blank" href="http://aoe.njisaac.com/" class="btn btn-primary">View project</a>
                                 <a target="_blank" href="https://github.com/nisaac2fly/aoe" class="btn btn-default">View source</a></p>
