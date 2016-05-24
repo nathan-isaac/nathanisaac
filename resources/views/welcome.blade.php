@@ -2,298 +2,359 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nathan Isaac Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <title>Nathan Isaac's Portfolio</title>
 
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Oswald:700|Open+Sans:300,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="/css/all.css" rel="stylesheet">
+    <script src="https://use.typekit.net/zkh5myr.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 </head>
 <body>
-    <nav class="section-sm black-bg dark-bg nav text-right">
-        <div class="container">
-            <div class="mobile-show">
-                <a id="nav-toggle" class="nav-item-icon" href="#"><i class="fa fa-bars"></i></a>
-            </div>
+    <section class="Section Section--hero-banner">
+        <div class="Section__container">
+            <nav class="Main-nav">
+                <a href="/" class="Main-nav__logo">
+                    <img src="/images/nathan-isaac-logo.svg" alt="Nathan Isaac" height="38px" width="auto">
+                </a>
 
-            <div class="mobile-hide nav-items">
-                <a class="nav-item" href="#services">Services</a>
-                <a class="nav-item" href="#skills">Skills</a>
-                <a class="nav-item" href="#about">About</a>
-                <a class="nav-item" href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <section id="top" class="hero section black-bg dark-bg">
-        <div class="container">
-            <img src="/images/logo-lg.svg" class="hero-logo img-responsive animated bounceInDown" alt="Nathan Isaac Web Design and Development"/>
-        </div>
-    </section>
-
-    <section id="services" class="section green-bg dark-bg">
-        <div class="container">
-            <div class="section-header">
-                <h1 class="section-heading">This is what I do</h1>
-            </div>
-
-            <div class="section-content">
-                <div class="col-1-half">
-                    <h2>Front-end Web Designer</h2>
-
-                    <p class="paragraph">As a front-end designer I design user friendly web applications using the latest web technologies, frameworks and languages which include HTML5, CSS3, Sass, JS, jQuery, and Angularjs.</p>
+                <div class="Main-nav__list text-right hidden-xs">
+                    <a href="#portfolio" class="Main-nav__item" onclick="$('#portfolio').animatescroll();">Portfolio</a>
+                    <a href="#projects" class="Main-nav__item" onclick="$('#projects').animatescroll();">Projects</a>
+                    <a href="#me" class="Main-nav__item" onclick="$('#me').animatescroll();">Me</a>
                 </div>
-                <div class="col-1-half">
-                    <h2>Back-end Web Developer</h2>
+            </nav>
 
-                    <p class="paragraph">As a back-end developer I develop clean and maintainable domain logic using popular technologies, frameworks and languages with a few examples being PHP, Laravel, SQL, and Git.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section yellow-bg light-bg">
-        <div class="container">
-            <div class="section-header">
-                <h1 class="section-heading">I specialize in...</h1>
+            <div class="Hero">
+                <h1 class="Hero__heading hidden-xs">Nathan Isaac</h1>
+                <h3 class="Hero__sub-header">An enthusiastic Web Application Developer who enjoys making the web a better place.</h3>
             </div>
 
-            <div class="section-content">
-
-                <div class="col-1-3rd">
-                    <h3>Languages</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item-progressive"><div class="progress-100-percent"></div>HTML &amp; HTML5</li>
-                        <li class="list-group-item-progressive"><div class="progress-95-percent"></div>CSS &amp; CSS3</li>
-                        <li class="list-group-item-progressive"><div class="progress-95-percent"></div>Sass</li>
-                        <li class="list-group-item-progressive"><div class="progress-85-percent"></div>JS</li>
-                        <li class="list-group-item-progressive"><div class="progress-80-percent"></div>PHP</li>
-                    </ul>
+            <div class="About">
+                <div class="Panel">
+                    <div class="Panel__header">
+                        <h2 class="Panel__title">I am...</h2>
+                    </div>
+                    <div class="Panel__body">
+                        ...a Web Application Developer employed at <a target="_blank" href="https://wallawalla.edu">Walla Walla University</a>.
+                    </div>
                 </div>
 
-                <div class="col-1-3rd">
-                    <h3>Frameworks</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item-progressive"><div class="progress-90-percent"></div>Laravel</li>
-                        <li class="list-group-item-progressive"><div class="progress-80-percent"></div>jQuery</li>
-                        <li class="list-group-item-progressive"><div class="progress-75-percent"></div>Angularjs</li>
-                        <li class="list-group-item-progressive"><div class="progress-50-percent"></div>WordPress</li>
-                    </ul>
+                <div class="Panel">
+                    <div class="Panel__header">
+                        <h2 class="Panel__title">I do...</h2>
+                    </div>
+                    <div class="Panel__body">
+                        ...web UX design and build custom websites and web applications.
+                        <a target="_blank" href="https://laravel.com/">Laravel</a>, <a target="_blank" href="http://getbootstrap.com/">Bootstrap</a>,
+                        and <a target="_blank" href="http://vuejs.org/">Vue.js</a> are a few of my favorite development tools.
+                    </div>
                 </div>
 
-                <div class="col-1-3rd">
-                    <h3>Operating Systems</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item-progressive"><div class="progress-95-percent"></div>Windows</li>
-                        <li class="list-group-item-progressive"><div class="progress-70-percent"></div>Mac</li>
-                        <li class="list-group-item-progressive"><div class="progress-50-percent"></div>Linux</li>
-                    </ul>
-
-                    <h3>Other</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item-progressive"><div class="progress-80-percent"></div>Git (Version Control)</li>
-                    </ul>
+                <div class="Panel">
+                    <div class="Panel__header">
+                        <h2 class="Panel__title">I want...</h2>
+                    </div>
+                    <div class="Panel__body">
+                        ...to help make your idea a reality, so what are you waiting for?
+                        <a href="mailto:nathan@nathan-isaac.com">Get in touch</a>.
+                    </div>
                 </div>
             </div>
+
+            <a href="#portfolio" class="More" onclick="$('#portfolio').animatescroll();">
+                <i class="material-icons More__icon">&#xE313;</i>
+            </a>
         </div>
     </section>
 
-    <!--<section class="section yellow-bg light-bg">
-        <div class="container">
-            <div class="section-header">
-                <h1 class="section-heading">This is how I work</h1>
-            </div>
+    <main class="Main-content">
 
-            <div class="section-content">
-                <ol>
-                    <li>Consultation</li>
-                    <li>Contract</li>
-                    <li>Sketching & Mockups</li>
-                    <li>Design &amp; Development</li>
-                    <li>Delivery</li>
-                    <li>Maintenance</li>
-                </ol>
-            </div>
-        </div>
-    </section>
+        <section class="Section" id="portfolio">
+            <div class="Section__container">
+                <h1 class="Section__heading">Portfolio</h1>
 
-    <section class="portfolio section orange-bg dark-bg">
-        <div class="container">
-            <div class="section-header">
-                <h1 class="section-heading">Here is my work</h1>
-            </div>
+                <div class="Portfolio-list">
+                    <div class="Portfolio-list__item">
+                        <div class="Portfolio-list__header">
+                            <img src="/images/portfolio/mywwu-v2.jpg" alt="myWWU" class="img-responsive">
+                        </div>
+                        <div class="Portfolio-list__body">
+                            <span class="label label-success Portfolio-list__label">In Beta</span>
 
-            <div class="section-content">
-                <p class="paragraph">Something</p>
-            </div>
-        </div>
-    </section>-->
+                            <h1 class="Portfolio-list__heading">myWWU V2</h1>
 
-    <section id="about" class="section orange-bg dark-bg">
-        <div class="container">
-            <div class="col-1-3rd">
-                <div class="text-center">
-                    <img src="/images/profile.png" alt="Nathan Isaac" class="img-responsive img-profile"/>
+                            <div class="Portfolio-list__content">
+                                <div class="Portfolio-list__section">
+                                    <h4>Client</h4>
+                                    <p><a href="https://wallawalla.edu" target="_blank">Walla Walla University</a></p>
+
+                                    <h4>Goals</h4>
+                                    <ul>
+                                        <li>Single sign on</li>
+                                        <li>Password reset</li>
+                                        <li>Centralize user dashboard</li>
+                                        <li>Automated application tests</li>
+                                        <li>New simplified logo</li>
+                                    </ul>
+                                </div>
+                                <div class="Portfolio-list__section">
+                                    <h4>Challenges</h4>
+                                    <p>Create a website that can be flexible for students, faculty, staff, and
+                                        alumni users. Implement SSO to make signing in to University application
+                                        simpler for the end user.</p>
+
+                                    <h4>Solution</h4>
+                                    <ul>
+                                        <li>Extensive planning & research</li>
+                                        <li>Sketching</li>
+                                        <li>User feedback</li>
+                                        <li>Implement site using modern frameworks</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <a target="_blank" href="https://mywwu-stage.wallawalla.edu" class="btn btn-primary">View project</a>
+                        </div>
+                    </div>
+
+                    <div class="Portfolio-list__item">
+                        <div class="Portfolio-list__header">
+                            <img src="/images/portfolio/mywwu-v1.jpg" alt="myWWU" class="img-responsive">
+                        </div>
+                        <div class="Portfolio-list__body">
+
+                            <h1 class="Portfolio-list__heading">myWWU V1</h1>
+
+                            <div class="Portfolio-list__content">
+                                <div class="Portfolio-list__section">
+                                    <h4>Client</h4>
+                                    <p><a href="https://wallawalla.edu" target="_blank">Walla Walla University</a></p>
+
+                                    <h4>Goals</h4>
+                                    <ul>
+                                        <li>Login portal</li>
+                                        <li>Password reset</li>
+                                        <li>Centralize user dashboard</li>
+                                        <li>Internal app authentication</li>
+                                    </ul>
+                                </div>
+                                <div class="Portfolio-list__section">
+                                    <h4>Challenge</h4>
+                                    <p>Design website to match the WWU brand. Focus design for student user
+                                        experience but also usable for faculty and staff.</p>
+
+                                    <h4>Solution</h4>
+                                    <p>Work side by side with designer to come up with a design focused on student
+                                        user experience. Convert custom website to use modern frameworks.</p>
+                                </div>
+                            </div>
+
+                            <a target="_blank" href="https://mywwu.wallawalla.edu" class="btn btn-primary">View project</a>
+                        </div>
+                    </div>
+
+                    <div class="Portfolio-list__item">
+                        <div class="Portfolio-list__header">
+                            <img src="/images/portfolio/apply.jpg" alt="apply" class="img-responsive">
+                        </div>
+                        <div class="Portfolio-list__body">
+
+                            <h1 class="Portfolio-list__heading">Apply</h1>
+
+                            <div class="Portfolio-list__content">
+                                <div class="Portfolio-list__section">
+                                    <h4>Client</h4>
+                                    <p><a href="https://wallawalla.edu" target="_blank">Walla Walla University</a></p>
+
+                                    <h4>Goals</h4>
+                                    <ul>
+                                        <li>User friendly online application</li>
+                                        <li>Integration into PeopleSoft</li>
+                                        <li>Seamless transition from applicant to student dashboard</li>
+                                        <li>Admin application management</li>
+                                        <li>Responsive design</li>
+                                    </ul>
+                                </div>
+                                <div class="Portfolio-list__section">
+                                    <h4>Challenge</h4>
+                                    <p>Create an application to integrate with internal data systems.</p>
+
+                                    <h4>Solution</h4>
+                                    <p>Design an online form application with a Turbo Tax feel to guide
+                                        applicant's through the apply process.</p>
+                                </div>
+                            </div>
+
+                            <a target="_blank" href="https://apply.wallawalla.edu" class="btn btn-primary">View project</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="col-2-3rds">
-                <div class="section-header">
-                    <h1 class="section-heading">A little bit about me</h1>
+        <section class="Section Section--projects" id="projects">
+            <div class="Section__container">
+                <h1 class="Section__heading">Projects</h1>
+
+                <div class="Projects">
+                    <div class="Panel">
+                        <div class="Panel__header">
+                            <h2 class="Panel__title">Personal</h2>
+                        </div>
+                        <div class="Panel__body">
+
+                            <h4 class="clearfix">Pantry App <span class="label label-success pull-right">In Development</span></h4>
+
+                            <p><img src="/images/portfolio/pantryapp.jpg" alt="Pantry App" class="img-responsive"></p>
+
+                            <p>Figuring what to eat from what is in the kitchen has always been a
+                                challenge for me. This is why I am working on Pantry. I am building this app
+                                with <a target="_blank" href="http://vuejs.org">Vue.js</a> and
+                                <a target="_blank" href="https://laravel.com">Laravel</a>.</p>
+
+                            <p><a target="_blank" href="http://pantryapp.io/" class="btn btn-primary">View project</a></p>
+
+                            <hr>
+
+                            <h4>Quiz App</h4>
+
+                            <p><img src="/images/portfolio/quizapp.jpg" alt="Quiz App" class="img-responsive"></p>
+
+                            <p>My typography class required that I learn different typefaces by name. I created
+                                this simple quiz app to help me study. This is built with
+                                <a target="_blank" href="https://angularjs.org">Angular.js</a>.</p>
+
+                            <p><a target="_blank" href="http://typereview.njisaac.com/" class="btn btn-primary">View project</a>
+                                <a target="_blank" href="https://github.com/nisaac2fly/typereview" class="btn btn-default">View source</a></p>
+
+                            <hr>
+
+                            <h4>AOE Generator</h4>
+
+                            <p><img src="/images/portfolio/aoeapp.jpg" alt="AOE App" class="img-responsive"></p>
+
+                            <p>This app generates random teams with civilization for the Age of Empires II computer
+                                game. This fun project was created in order to learn my first
+                                <a target="_blank" href="https://angularjs.org/">JS framework</a> and keep up with
+                                <a target="_blank" href="https://laravel.com">Laravel</a>.</p>
+
+                            <p><a target="_blank" href="http://aoe.njisaac.com/" class="btn btn-primary">View project</a>
+                                <a target="_blank" href="https://github.com/nisaac2fly/aoe" class="btn btn-default">View source</a></p>
+                        </div>
+                    </div>
+
+
+                    <div class="Panel">
+                        <div class="Panel__header">
+                            <h2 class="Panel__title">WWU</h2>
+                        </div>
+                        <div class="Panel__body">
+                            <h4>API</h4>
+
+                            <p>WWU needed an app to provide integrations between internal projects and services.
+                                I found this a perfect opportunity to use the dedicated API project called
+                                <a target="_blank" href="https://lumen.laravel.com/">Lumen</a>.</p>
+
+                            <hr>
+
+                            <h4>Checkpoint</h4>
+
+                            <p><img src="/images/portfolio/swipes.png" alt="Swipe App" class="img-responsive"></p>
+
+                            <p>The WWU CommUnity department needed an app to collect event attendance. This app
+                                needed to be internet independent. We decided to build a chrome app with
+                                <a target="_blank" href="https://angularjs.org/">Angular JS</a>. This way the
+                                the app can be installed locally and run without internet.</p>
+                        </div>
+                    </div>
+
+                    <div class="Panel">
+                        <div class="Panel__header">
+                            <h2 class="Panel__title">Freelance</h2>
+                        </div>
+                        <div class="Panel__body">
+
+                            <h4>EZPEDO</h4>
+
+                            <p><img src="/images/portfolio/ezpedo.jpg" alt="EZPEDO" class="img-responsive"></p>
+
+                            <p>For the EZPEDO project, I was responsible for converting PDF mockup's into HTML,
+                                CSS, and JS based on client specifications.</p>
+
+                            <p><a target="_blank" href="https://www.ezpedo.com/" class="btn btn-primary">View project</a></p>
+
+                            <hr>
+
+                            <h4>Martin Airfield</h4>
+
+                            <p><img src="/images/portfolio/martin-airfield.jpg" alt="martin field" class="img-responsive"></p>
+
+                            <p>The Martin Airfield website was designed for the privately owned airport in
+                                College Place WA. The website was built with
+                                <a href="https://wordpress.com" target="_blank">WordPress</a> and a custom
+                                WordPress theme.</p>
+
+                            <p><a target="_blank" href="https://www.ezpedo.com/" class="btn btn-primary">View project</a></p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="section-content">
-                    <p class="paragraph">
-                        Hi, I'm Nathan. I am a web designer and developer who enjoys web technology and the web technology community. I am currently completing my Web Design Degree at Walla Walla University while being employed full time at Walla Walla University as a Web Application Developer.
+        <section class="Section" id="me">
+            <div class="Section__container">
+                <h1 class="Section__heading">Me</h1>
+
+                <div class="Section__content Section__content--me">
+                    <p>
+                        As a Web Application Developer, at
+                        <a target="_blank" href="https://wallawalla.edu">Walla Walla University</a>,
+                        my passion lies in bringing web pages to life with modern technologies.
+                        I code in various coding languages such as HTML, CSS, JS, SQL, and PHP.
                     </p>
+
+                    <p>Like to talk? <a href="mailto:nathan@nathan.isaac.com">Get in touch</a>.</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <section class="Section Section--footer">
+        <div class="Section__container">
+            <div class="Footer">
+                <div class="Footer__social">
+                    <a target="_blank" href="https://github.com/nisaac2fly" class="Footer__social-link">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a target="_blank" href="https://twitter.com/nisaac2fly" class="Footer__social-link">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a target="_blank" href="https://www.linkedin.com/in/nathan-isaac-86549352" class="Footer__social-link">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="mailto:nathan@nathan.isaac.com" class="Footer__social-link">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="Footer__meta">
+                    <h5 class="Footer__copy">&copy; Nathan Isaac {{ date('Y') }}</h5>
+                    <div class="Footer__hosted">
+                        Proudly hosted with <a target="_blank" href="https://forge.laravel.com/">Laravel Forge</a> and
+                        <a target="_blank" href="https://m.do.co/c/2d5d69d54230">DigitalOcean</a>.
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section white-bg light-bg">
-        <div class="container">
-            <div class="section-header">
-                <h1 class="section-heading">Get in touch</h1>
-            </div>
-
-            <div class="section-content">
-                {!! Form::open(['url' => '/#contact']) !!}
-                    <div class="row">
-                        <div class="col-1-half">
-                            <div class="form-group {!! ! $errors->has('name') ? '' : 'form-control-error' !!}">
-                                {!! Form::label('name', 'Name', ['class' => 'form-label']) !!}
-                                {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'How should I address you?'] ) !!}
-                                {!! $errors->first('name', '<span class="help-block">:message</span>') !!}
-                            </div>
-                        </div>
-
-                        <div class="col-1-half">
-                            <div class="form-group {!! ! $errors->has('company') ? '' : 'form-control-error' !!}">
-                                {!! Form::label('company', 'Company', ['class' => 'form-label']) !!}
-                                {!! Form::text('company', null, ['class' => 'form-control', 'placeholder' => 'Who do you work for?'] ) !!}
-                                {!! $errors->first('company', '<span class="help-block">:message</span>') !!}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-1-half">
-                            <div class="form-group {!! ! $errors->has('phone') ? '' : 'form-control-error' !!}">
-                                {!! Form::label('phone', 'Phone', ['class' => 'form-label']) !!}
-                                {!! Form::input('phone', 'phone', null, ['class' => 'form-control', 'placeholder' => 'How should I contact you?'] ) !!}
-                                {!! $errors->first('phone', '<span class="help-block">:message</span>') !!}
-                            </div>
-                        </div>
-
-                        <div class="col-1-half">
-                            <div class="form-group {!! ! $errors->has('email') ? '' : 'form-control-error' !!}">
-                                {!! Form::label('email', 'Email', ['class' => 'form-label']) !!}
-                                {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'How should I contact you?'] ) !!}
-                                {!! $errors->first('email', '<span class="help-block">:message</span>') !!}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group {!! ! $errors->has('subject') ? '' : 'form-control-error' !!}">
-                        {!! Form::label('subject', 'Subject', ['class' => 'form-label']) !!}
-                        {!! Form::text('subject', null, ['class' => 'form-control', 'placeholder' => 'What\'s this message about?']) !!}
-                        {!! $errors->first('subject', '<span class="help-block">:message</span>') !!}
-                    </div>
-
-                    <div class="form-group {!! ! $errors->has('message') ? '' : 'form-control-error' !!}">
-                        {!! Form::label('message', 'Message', ['class' => 'form-label']) !!}
-                        {!! Form::textarea('message', null, ['class' => 'form-control', 'placeholder' => 'What\'s on your mind?']) !!}
-                        {!! $errors->first('message', '<span class="help-block">:message</span>') !!}
-                    </div>
-
-                    <div class="form-group">
-                        <button class="btn-primary btn-lg btn-block">Send</button>
-                    </div>
-                {!! Form::close() !!}
-            </div>
-        </div>
-    </section>
-
-    <section class="footer section-sm black-bg dark-bg">
-        <div class="container">
-            <div class="col-1-half">
-                &copy; Nathan-Isaac.com {{ date('Y') }}. All rights reserved.
-            </div>
-
-            <div class="col-1-half">
-                <div class="text-right">Proudly hosted with <a href="https://forge.laravel.com" class="link"><strong>Laravel Forge</strong></a> and <a href="https://www.digitalocean.com/?refcode=2d5d69d54230" class="link"><strong>DigitalOcean</strong></a>.</div>
-            </div>
-        </div>
-    </section>
-
-    @if(session('flash.heading'))
-        <div class="flash">
-            <i class="fa fa-times-circle flash-close"></i>
-            <h1 class="flash-heading">{{ session('flash.heading') }}</h1>
-
-            @if(session('flash.message'))
-                <p class="flash-message">{{ session('flash.message') }}</p>
-            @endif
-        </div>
-    @endif
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-
-    <script>
-        $('#nav-toggle').on('click', function(e) {
-            e.preventDefault();
-
-            toggleMobileNav();
-        });
-
-        $('.nav-item').on('click', function(e) {
-            $(this).closest('.nav').removeClass('nav-mobile');
-            toggleMobileNav();
-        });
-
-        $('.flash-close').on('click', function() {
-            $(this).closest('.flash').addClass('animated bounceOutRight');
-        });
-
-        if($('.flash')) {
-            setTimeout(function() {
-                $('.flash').addClass('animated bounceOutRight');
-            }, 5000);
-        }
-
-        function toggleMobileNav() {
-            var icon = $('#nav-toggle .fa');
-
-            if(icon.hasClass('fa-bars')) {
-                icon.addClass('fa-times');
-                icon.closest('.nav').addClass('nav-mobile');
-                icon.removeClass('fa-bars');
-            } else {
-                icon.addClass('fa-bars');
-                icon.closest('.nav').removeClass('nav-mobile');
-                icon.removeClass('fa-times');
-            }
-        }
-    </script>
-
-    @if( ! Config::get('app.debug'))
-        @include('partials.google')
-    @endif
+    <script src="{{ elixir('js/app.js') }}"></script>
 </body>
 </html>
