@@ -290,7 +290,7 @@
                             <p><img src="/images/portfolio/martin-airfield.jpg" alt="martin field" class="img-responsive"></p>
 
                             <p>The Martin Airfield website was designed for the privately owned airport in
-                                College Place WA. The website was built withWordPress and a custom
+                                College Place WA. The website was built with WordPress and a custom
                                 WordPress theme.</p>
 
                             <p><a target="_blank" href="http://martinairfield.com/" class="btn btn-primary">View project</a></p>
