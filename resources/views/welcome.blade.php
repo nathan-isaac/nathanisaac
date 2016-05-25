@@ -100,12 +100,9 @@
                     <div class="Portfolio-list__item">
                         <div class="Portfolio-list__header">
                             <img src="/images/portfolio/mywwu-v2.jpg" alt="myWWU" class="img-responsive">
+                            <span class="Portfolio-list__label">IN BETA</span>
                         </div>
                         <div class="Portfolio-list__body">
-                            <p>
-                                <span class="label label-success Portfolio-list__label">In Beta</span>
-                            </p>
-
                             <h1 class="Portfolio-list__heading">myWWU Version 2</h1>
 
                             <div class="Portfolio-list__content">
