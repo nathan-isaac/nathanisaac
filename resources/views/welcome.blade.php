@@ -272,7 +272,8 @@
                             <h4>API</h4>
 
                             <p>WWU needed an app to provide integrations between internal projects and services.
-                                I found this a perfect opportunity to use the dedicated API project called Lumen.</p>
+                                I found this to be a perfect opportunity to use the dedicated Laravel API framework called
+                                Lumen.</p>
 
                             <hr>
 
