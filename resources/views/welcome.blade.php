@@ -106,7 +106,7 @@
                                 <span class="label label-success Portfolio-list__label">In Beta</span>
                             </p>
 
-                            <h1 class="Portfolio-list__heading">myWWU V2</h1>
+                            <h1 class="Portfolio-list__heading">myWWU Version 2</h1>
 
                             <div class="Portfolio-list__content">
                                 <div class="Portfolio-list__section">
@@ -148,7 +148,7 @@
                         </div>
                         <div class="Portfolio-list__body">
 
-                            <h1 class="Portfolio-list__heading">myWWU V1</h1>
+                            <h1 class="Portfolio-list__heading">myWWU Version 1</h1>
 
                             <div class="Portfolio-list__content">
                                 <div class="Portfolio-list__section">
