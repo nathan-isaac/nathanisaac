@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Nathan Isaac') }}</title>
+    <title>{{ config('app.name', 'Nathan Isaac - Full Stack Developer') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet">
@@ -58,5 +58,9 @@
 
     <!-- Scripts -->
     <script src="{{ elixir('js/app.js') }}"></script>
+
+    @if(app()->environment('production'))
+        @include('partials.analytics')
+    @endif
 </body>
 </html>

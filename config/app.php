@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Nathan Isaac',
+    'name' => 'Nathan Isaac - Full Stack Developer',
 
     /*
     |--------------------------------------------------------------------------
