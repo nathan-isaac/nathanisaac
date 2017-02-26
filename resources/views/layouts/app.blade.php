@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
     <link href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     {{--<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png?v=201608162100">--}}
     {{--<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png?v=201608162100" sizes="32x32">--}}
@@ -57,7 +57,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ elixir('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 
     @if(app()->environment('production'))
         @include('partials.analytics')
