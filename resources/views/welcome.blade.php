@@ -4,7 +4,7 @@
     <header class="header">
         <div class="ni">Nathan Isaac</div>
         <div class="hello">
-            <h1 class="hello-title">Hello! I'm a <strong>Full Stack Developer</strong> based College Place, WA.</h1>
+            <h1 class="hello-title">Hello! I'm a <strong>Full Stack Developer</strong> based in College Place, WA.</h1>
             <p class="hello-subtitle">Got a project? <a href="mailto:nathan@nathan-isaac.com" class="hello-link">Contact me</a></p>
         </div>
         <nav class="hello-nav">
