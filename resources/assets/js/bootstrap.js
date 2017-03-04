@@ -1,5 +1,5 @@
 
-// window._ = require('lodash');
+window._ = require('lodash');
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
