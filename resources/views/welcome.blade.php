@@ -26,4 +26,5 @@
             {{--<a href="#" class="hello-nav-link is-favorites">Favorites</a>--}}
         </nav>
     </header>
+    <particle-canvas></particle-canvas>
 @endsection

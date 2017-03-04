@@ -15,17 +15,19 @@
             this.canvas = this.$refs.canvas;
             this.ctx = this.canvas.getContext('2d');
 
-            let particles = _.range(100);
+            this.resetCanvasSize(window.innerWidth, window.innerHeight);
+
+            let particles = _.range(125);
 
             _.forEach(particles, particle => {
                 this.particles.push({
                     position: {
-                        x: _.random(0,440),
-                        y: _.random(0,640)
+                        x: _.random(0,this.canvas.width),
+                        y: _.random(0,this.canvas.height)
                     },
                     velocity: {
-                        x: _.random(-.2,.2),
-                        y: _.random(-.2,.2)
+                        x: _.random(-.5,.5),
+                        y: _.random(-.5,.5)
                     },
                     radius: 2,
                     color: '#8BC34A'
@@ -36,8 +38,15 @@
             this.drawLines();
 
             window.requestAnimationFrame(this.animateCanvas);
+            window.addEventListener('resize', event => {
+                this.resetCanvasSize(event.target.innerWidth, event.target.innerHeight);
+            })
         },
         methods: {
+            resetCanvasSize(width, height) {
+                this.ctx.canvas.width = width;
+                this.ctx.canvas.height = height;
+            },
             distance(x1, y1, x2, y2) {
                 let distanceSquared = Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2);
                 return Math.sqrt(distanceSquared);
@@ -52,7 +61,7 @@
             },
             drawLine(x1, y1, x2, y2, distance) {
                 let opacity = 0;
-                let maxDistance = 100;
+                let maxDistance = 150;
                 let minDistance = 1;
 
                 if (distance == 0) {
@@ -107,12 +116,11 @@
 </script>
 
 <style lang="sass" rel="stylesheet/sass">
-    /*#app*/
-        /*height: 100vh*/
-        /*border: 5px solid #8BC34A*/
-
-    /*canvas*/
-        /*width: 100%*/
-        /*height: 100vh*/
-
+    canvas
+        width: 100%
+        height: 100vh
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -100
 </style>
