@@ -14,10 +14,11 @@
         mounted() {
             this.canvas = this.$refs.canvas;
             this.ctx = this.canvas.getContext('2d');
+            this.ctx.scale(2,2);
 
             this.resetCanvasSize(window.innerWidth, window.innerHeight);
 
-            let particles = _.range(125);
+            let particles = _.range(25);
 
             _.forEach(particles, particle => {
                 this.particles.push({
@@ -26,10 +27,10 @@
                         y: _.random(0,this.canvas.height)
                     },
                     velocity: {
-                        x: _.random(-.5,.5),
-                        y: _.random(-.5,.5)
+                        x: _.random(-1,1),
+                        y: _.random(-1,1)
                     },
-                    radius: 2,
+                    radius: 4,
                     color: '#8BC34A'
                 });
             });
@@ -44,8 +45,10 @@
         },
         methods: {
             resetCanvasSize(width, height) {
-                this.ctx.canvas.width = width;
-                this.ctx.canvas.height = height;
+                this.ctx.canvas.width = width * 2;
+                this.ctx.canvas.height = height * 2;
+                this.ctx.canvas.style.width = `${width}px`;
+                this.ctx.canvas.style.height = `${height}px`;
             },
             distance(x1, y1, x2, y2) {
                 let distanceSquared = Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2);
@@ -61,7 +64,7 @@
             },
             drawLine(x1, y1, x2, y2, distance) {
                 let opacity = 0;
-                let maxDistance = 150;
+                let maxDistance = 400;
                 let minDistance = 1;
 
                 if (distance == 0) {
@@ -77,6 +80,7 @@
                 this.ctx.beginPath();
                 this.ctx.moveTo(x1, y1);
                 this.ctx.lineTo(x2, y2);
+                this.ctx.lineWidth = 2;
                 this.ctx.closePath();
                 this.ctx.strokeStyle = color;
                 this.ctx.stroke();
@@ -101,11 +105,11 @@
                     particle.position.y += particle.velocity.y;
 
                     if (particle.position.y + particle.velocity.y > this.canvas.height || particle.position.y + particle.velocity.y < 0) {
-                        particle.velocity.y = -particle.velocity.y;
+                        particle.velocity.y = - particle.velocity.y;
                     }
 
                     if (particle.position.x + particle.velocity.x > this.canvas.width || particle.position.x + particle.velocity.x < 0) {
-                        particle.velocity.x = -particle.velocity.x;
+                        particle.velocity.x = - particle.velocity.x;
                     }
                 });
 
