@@ -8,10 +8,10 @@
             <p class="hello-subtitle">Got a project? <a href="mailto:nathan@nathan-isaac.com" class="hello-link">Contact me</a></p>
         </div>
         <nav class="hello-nav">
-            <a href="https://twitter.com/nisaac2fly" class="hello-nav-link is-icon is-twitter" title="Twitter">
+            <a href="https://twitter.com/nathanjisaac" class="hello-nav-link is-icon is-twitter" title="Twitter">
                 <i class="fa fa-twitter" aria-hidden="true"></i>
             </a>
-            <a href="https://github.com/nisaac2fly" class="hello-nav-link is-icon" title="Github">
+            <a href="https://github.com/nathanjisaac" class="hello-nav-link is-icon" title="Github">
                 <i class="fa fa-github" aria-hidden="true"></i>
             </a>
             <a href="https://www.linkedin.com/in/nathanisaac" class="hello-nav-link is-icon" title="Linkedin">
