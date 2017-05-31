@@ -17,7 +17,7 @@
             <a href="https://www.linkedin.com/in/nathanisaac" class="hello-nav-link is-icon" title="Linkedin">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="mailto:nathan@nathan-isaac.com" class="hello-nav-link is-icon" title="Email">
+            <a href="mailto:nathanjisaac@gmail.com" class="hello-nav-link is-icon" title="Email">
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
             </a>
 
