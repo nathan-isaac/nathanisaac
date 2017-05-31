@@ -5,7 +5,7 @@
         <div class="ni">Nathan Isaac</div>
         <div class="hello">
             <h1 class="hello-title">Hello! I'm a <strong>Full Stack Developer</strong> based in College Place, WA.</h1>
-            <p class="hello-subtitle">Got a project? <a href="mailto:nathan@nathan-isaac.com" class="hello-link">Contact me</a></p>
+            <p class="hello-subtitle">Got a project? <a href="mailto:nathanjisaac@gmail.com" class="hello-link">Contact me</a></p>
         </div>
         <nav class="hello-nav">
             <a href="https://twitter.com/nathanjisaac" class="hello-nav-link is-icon is-twitter" title="Twitter">
