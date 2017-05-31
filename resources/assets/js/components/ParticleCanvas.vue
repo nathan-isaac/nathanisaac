@@ -1,5 +1,5 @@
 <template>
-    <canvas width="440" height="640" ref="canvas"></canvas>
+    <canvas width="440" height="640" ref="canvas" style="opacity: 0.5"></canvas>
 </template>
 
 <script>
@@ -8,42 +8,39 @@
             return {
                 canvas: null,
                 ctx: null,
-                particles: []
+                particles: [],
+                numberOfParticles: 100,
             }
         },
         mounted() {
-            this.canvas = this.$refs.canvas;
-            this.ctx = this.canvas.getContext('2d');
-            this.ctx.scale(2,2);
-
+            this.initializeCanvas();
             this.resetCanvasSize(window.innerWidth, window.innerHeight);
+            this.buildParticles();
 
-            let particles = _.range(25);
-
-            _.forEach(particles, particle => {
-                this.particles.push({
-                    position: {
-                        x: _.random(0,this.canvas.width),
-                        y: _.random(0,this.canvas.height)
-                    },
-                    velocity: {
-                        x: _.random(-1,1),
-                        y: _.random(-1,1)
-                    },
-                    radius: 4,
-                    color: '#8BC34A'
-                });
-            });
-
-            this.drawParticles();
-            this.drawLines();
-
-            window.requestAnimationFrame(this.animateCanvas);
-            window.addEventListener('resize', event => {
-                this.resetCanvasSize(event.target.innerWidth, event.target.innerHeight);
-            })
+            setTimeout(this.buildCanvas, 500);
         },
         methods: {
+            initializeCanvas() {
+                this.canvas = this.$refs.canvas;
+                this.ctx = this.canvas.getContext('2d');
+                this.ctx.scale(2,2);
+            },
+            buildParticles() {
+                this.particles = _.map(_.range(this.numberOfParticles), particle => {
+                    return {
+                        position: {
+                            x: _.random(0,this.canvas.width),
+                            y: _.random(0,this.canvas.height)
+                        },
+                        velocity: {
+                            x: _.random(-2,2),
+                            y: _.random(-2,2)
+                        },
+                        radius: _.random(2,10),
+                        color: `rgba(139, 195, 74, 0.5)`
+                    };
+                });
+            },
             resetCanvasSize(width, height) {
                 this.ctx.canvas.width = width * 2;
                 this.ctx.canvas.height = height * 2;
@@ -54,12 +51,10 @@
                 let distanceSquared = Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2);
                 return Math.sqrt(distanceSquared);
             },
-            drawLines() {
-                _.forEach(this.particles, particleA => {
-                    _.forEach(this.particles, particleB => {
-                        let distance = this.distance(particleA.position.x, particleA.position.y, particleB.position.x, particleB.position.y);
-                        this.drawLine(particleA.position.x, particleA.position.y, particleB.position.x, particleB.position.y, distance);
-                    });
+            drawLines(particleA) {
+                _.forEach(this.particles, particleB => {
+                    let distance = this.distance(particleA.position.x, particleA.position.y, particleB.position.x, particleB.position.y);
+                    this.drawLine(particleA.position.x, particleA.position.y, particleB.position.x, particleB.position.y, distance);
                 });
             },
             drawLine(x1, y1, x2, y2, distance) {
@@ -67,7 +62,7 @@
                 let maxDistance = 400;
                 let minDistance = 1;
 
-                if (distance == 0) {
+                if (distance === 0) {
                     opacity = 1;
                 } else if ( distance <= maxDistance - 1 ) {
                     opacity = 1 - _.round((distance - minDistance) / (maxDistance - minDistance), 2);
@@ -75,32 +70,28 @@
 
                 opacity = opacity - 0.4;
 
-                let color = `rgba(139, 195, 74, ${opacity})`;
-
                 this.ctx.beginPath();
                 this.ctx.moveTo(x1, y1);
                 this.ctx.lineTo(x2, y2);
-                this.ctx.lineWidth = 2;
+                this.ctx.lineWidth = 1;
                 this.ctx.closePath();
-                this.ctx.strokeStyle = color;
+                this.ctx.strokeStyle = `rgba(139, 195, 74, ${opacity})`;
                 this.ctx.stroke();
             },
-            drawParticles() {
-                _.forEach(this.particles, particle => {
-                    this.ctx.beginPath();
-                    this.ctx.arc(particle.position.x, particle.position.y, particle.radius, 0, Math.PI * 2, true);
-                    this.ctx.closePath();
-                    this.ctx.fillStyle = particle.color;
-                    this.ctx.fill();
-                });
+            drawParticle(particle) {
+                this.ctx.beginPath();
+                this.ctx.arc(particle.position.x, particle.position.y, particle.radius, 0, Math.PI * 2, true);
+                this.ctx.closePath();
+                this.ctx.fillStyle = `rgba(139, 195, 74, 0.5)`;
+                this.ctx.fill();
             },
-            animateCanvas() {
+            buildCanvas() {
                 this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
 
-                this.drawParticles();
-                this.drawLines();
-
                 _.forEach(this.particles, particle => {
+                    this.drawParticle(particle);
+                    this.drawLines(particle);
+
                     particle.position.x += particle.velocity.x;
                     particle.position.y += particle.velocity.y;
 
@@ -112,6 +103,9 @@
                         particle.velocity.x = - particle.velocity.x;
                     }
                 });
+            },
+            animateCanvas(time) {
+                this.buildCanvas();
 
                 window.requestAnimationFrame(this.animateCanvas);
             }
