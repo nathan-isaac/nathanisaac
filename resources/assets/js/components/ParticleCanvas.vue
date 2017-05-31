@@ -1,5 +1,5 @@
 <template>
-    <canvas width="440" height="640" ref="canvas"></canvas>
+    <canvas width="440" height="640" ref="canvas" style="opacity: 0.5"></canvas>
 </template>
 
 <script>
@@ -8,7 +8,8 @@
             return {
                 canvas: null,
                 ctx: null,
-                particles: []
+                particles: [],
+                numberOfParticles: 100,
             }
         },
         mounted() {
@@ -16,10 +17,7 @@
             this.resetCanvasSize(window.innerWidth, window.innerHeight);
             this.buildParticles();
 
-            window.requestAnimationFrame(this.animateCanvas);
-            window.addEventListener('resize', event => {
-                this.resetCanvasSize(event.target.innerWidth, event.target.innerHeight);
-            })
+            setTimeout(this.buildCanvas, 500);
         },
         methods: {
             initializeCanvas() {
@@ -28,18 +26,18 @@
                 this.ctx.scale(2,2);
             },
             buildParticles() {
-                this.particles = _.map(_.range(25), particle => {
+                this.particles = _.map(_.range(this.numberOfParticles), particle => {
                     return {
                         position: {
                             x: _.random(0,this.canvas.width),
                             y: _.random(0,this.canvas.height)
                         },
                         velocity: {
-                            x: _.random(-4,4),
-                            y: _.random(-4,4)
+                            x: _.random(-2,2),
+                            y: _.random(-2,2)
                         },
-                        radius: 6,
-                        color: '#8BC34A'
+                        radius: _.random(2,10),
+                        color: `rgba(139, 195, 74, 0.5)`
                     };
                 });
             },
@@ -72,24 +70,22 @@
 
                 opacity = opacity - 0.4;
 
-                let color = `rgba(139, 195, 74, ${opacity})`;
-
                 this.ctx.beginPath();
                 this.ctx.moveTo(x1, y1);
                 this.ctx.lineTo(x2, y2);
-                this.ctx.lineWidth = 4;
+                this.ctx.lineWidth = 1;
                 this.ctx.closePath();
-                this.ctx.strokeStyle = color;
+                this.ctx.strokeStyle = `rgba(139, 195, 74, ${opacity})`;
                 this.ctx.stroke();
             },
             drawParticle(particle) {
                 this.ctx.beginPath();
                 this.ctx.arc(particle.position.x, particle.position.y, particle.radius, 0, Math.PI * 2, true);
                 this.ctx.closePath();
-                this.ctx.fillStyle = particle.color;
+                this.ctx.fillStyle = `rgba(139, 195, 74, 0.5)`;
                 this.ctx.fill();
             },
-            animateCanvas() {
+            buildCanvas() {
                 this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
 
                 _.forEach(this.particles, particle => {
@@ -107,6 +103,9 @@
                         particle.velocity.x = - particle.velocity.x;
                     }
                 });
+            },
+            animateCanvas(time) {
+                this.buildCanvas();
 
                 window.requestAnimationFrame(this.animateCanvas);
             }
